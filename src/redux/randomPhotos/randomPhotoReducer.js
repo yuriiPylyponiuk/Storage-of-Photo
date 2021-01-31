@@ -37,6 +37,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         data: action.payload
       }
+    case types.GET_NORMAL_PHOTO:
+      return{
+        ...state,
+        newPhoto: false,
+      }
     case types.GET_BLURE1_PHOTO:
       return{
         ...state,
