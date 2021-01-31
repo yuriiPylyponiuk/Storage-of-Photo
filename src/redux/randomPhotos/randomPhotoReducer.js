@@ -4,7 +4,8 @@ const initialState = {
   photo: false,
   loaded: false,
   progress: false,
-  url:''
+  data:'',
+  newPhoto:''
 }
 
 export default function reducer(state = initialState, action) {
@@ -13,6 +14,7 @@ export default function reducer(state = initialState, action) {
       return{
         ...state,
         photo: false,
+        newPhoto: false,
         loaded: false,
         progress: true
       }
@@ -23,10 +25,27 @@ export default function reducer(state = initialState, action) {
         loaded: true,
         progress: false
       }
-    case types.GET_FULL_URL:
+    case types.GET_FILTERED_PHOTO_SECCESS:
       return{
         ...state,
-        url: action.payload
+        newPhoto: action.payload,
+        loaded: true,
+        progress: false
+      }
+    case types.GET_GRAY_PHOTO:
+      return{
+        ...state,
+        data: action.payload
+      }
+    case types.GET_BLURE1_PHOTO:
+      return{
+        ...state,
+        data: action.payload
+      }
+    case types.GET_BLURE2_PHOTO:
+      return{
+        ...state,
+        data: action.payload
       }
       default: 
       return state;

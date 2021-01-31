@@ -16,3 +16,12 @@ export async function getRandomPhoto() {
     })
   return resp
 }
+
+export async function getFilterOnPhoto(payload) {
+  const resp = await API.get('/', {
+    params: {
+      ...payload
+    }
+  })
+  return resp
+}
