@@ -1,6 +1,7 @@
 import React from 'react';
-import {getRandomPhotoReq, getGrayScale, getBlureFirst, getBlureSecond, normalPhoto} from '../../redux/randomPhotos/randomPhotoActions'
+import {getRandomPhotoReq, getGrayScale, getBlureFirst, getBlureSecond, normalPhoto} from '../../redux/randomPhotos/randomPhotoActions';
 import {connect} from "react-redux";
+import './randomPhotoStyle.css';
 
 class RandomComponent extends React.Component {
   constructor(props){
@@ -11,18 +12,19 @@ class RandomComponent extends React.Component {
   showRandomFotoBlock(){
     if(this.props.loaded){
       let url = this.props.photo.config.baseURL+'/id/'+this.props.photo.headers['picsum-id']+'/800/600';
-      console.log(url)
       let urlForFilters = '/id/'+this.props.photo.headers['picsum-id']+'/800/600';
         return(
-          <div>
+          <div className='randomPhotoBlock'>
             {this.props.newPhoto? 
               <img src={'https://picsum.photos'+ this.props.data} alt=""/>:        
               <img src={url} alt=""/>
             }
-            <button onClick = {()=> this.props.normalPhoto()}>Normal</button>
-            <button onClick = {()=> this.props.getGrayScale(urlForFilters+'?grayscale')}>GrayScale</button>
-            <button onClick = {()=> this.props.getBlureFirst(urlForFilters+'?blur')}>Blur1</button>
-            <button onClick = {()=> this.props.getBlureSecond(urlForFilters+'?blur=2')}>blur2</button>
+            <div className="randomPhotoBlock-filters">
+              <button className="randomPhotoBlock-filters-btn btn" onClick = {()=> this.props.normalPhoto()}>Normal</button>
+              <button className="randomPhotoBlock-filters-btn btn" onClick = {()=> this.props.getGrayScale(urlForFilters+'?grayscale')}>GrayScale</button>
+              <button className="randomPhotoBlock-filters-btn btn" onClick = {()=> this.props.getBlureFirst(urlForFilters+'?blur')}>Blur1</button>
+              <button className="randomPhotoBlock-filters-btn btn" onClick = {()=> this.props.getBlureSecond(urlForFilters+'?blur=2')}>blur2</button>
+            </div>
           </div>
         )
       }

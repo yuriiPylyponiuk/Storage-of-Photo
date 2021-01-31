@@ -1,0 +1,23 @@
+.randomPhotoBlock{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.randomPhotoBlock-filters{
+  margin-top: 20px;
+}
+.randomPhotoBlock-filters button{
+  margin: 0 10px;
+}
+.btn{
+  padding: 10px 14px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: .5s;
+  background-color: #ffe2e0;
+}
+.btn:hover{
+  background-color: #f8a8a4;
+  color: #fff;
+}
