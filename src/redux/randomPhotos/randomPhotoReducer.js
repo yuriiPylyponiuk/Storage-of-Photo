@@ -52,7 +52,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         data: action.payload
       }
-      default: 
+    default: 
       return state;
   }
 }
