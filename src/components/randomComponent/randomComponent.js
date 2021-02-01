@@ -8,6 +8,9 @@ class RandomComponent extends React.Component {
     super(props);
     this.showRandomFotoBlock = this.showRandomFotoBlock.bind(this)
   }
+  componentDidMount(){
+    this.props.getRandomPhotoReq()
+  }
 
   showRandomFotoBlock(){
     if(this.props.loaded){

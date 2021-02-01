@@ -9,6 +9,7 @@ const Header = (props) => {
 		<nav className="menu">
       <Link className='btn' to="/">Home</Link>
       <Link className='btn' onClick={() => props.getRandomPhotoReq()} to="/random-photo/">Random Photo</Link>
+      <Link className='btn' to="/cardPage/">Cart</Link>
 		</nav>
 	);
 }
