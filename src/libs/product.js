@@ -25,3 +25,7 @@ export async function getFilterOnPhoto(payload) {
   })
   return resp
 }
+export async function getFilterOnPhotoById(action) {
+  const resp = await API.get(`/id/${action.payload}/1000/800`)
+  return resp
+}

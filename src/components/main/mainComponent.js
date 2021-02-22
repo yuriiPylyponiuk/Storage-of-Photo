@@ -21,9 +21,11 @@ class Main extends React.Component {
           return(
             <div key={item.id} className='item-block'>
               <div className='photo-block'>
-                <img src={item.download_url} alt="Photos"/>
+                <Link to= {{pathname: `/photo/${item.id}`}} params={{id: item.id}}>
+                  <img src={item.download_url} alt="Photos"/>
+                </Link>
               </div>
-              <Link to= {{pathname: `/photo/${item.id}`}}>
+              <Link className='photo-author' to= {{pathname: `/photo/${item.id}`}}>
                 <h2 className='photo-author'><span>Author: </span>{item.author}</h2>
               </Link>
               <div className="item-block-tools">

@@ -1,0 +1,2 @@
+export const GET_PHOTO_BY_ID_REQ = 'GET_PHOTO_BY_ID_REQ';
+export const GET_PHOTO_BY_ID_SEC = 'GET_PHOTO_BY_ID_SEC';

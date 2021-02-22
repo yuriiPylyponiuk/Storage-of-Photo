@@ -17,6 +17,10 @@
   height: 200px;
   overflow: hidden;
 }
+.photo-author{
+  color: #000;
+  text-decoration: none;
+}
 .photo-block img{
   width: 100%;
 }
