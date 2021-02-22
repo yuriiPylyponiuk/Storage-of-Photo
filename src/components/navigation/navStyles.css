@@ -7,7 +7,8 @@
   margin-right: 10px;
   font-size: 22px;
   text-decoration: none;
-  position: relative
+  position: relative;
+  border: none;
 }
 
 .menu .btn::after{

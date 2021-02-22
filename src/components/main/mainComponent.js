@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
 import './mainComponent.css'
-import {getAllPhotosRequestAction} from '../../redux/listOfPhotos/listPhotosActions'
+import {getAllPhotosRequestAction} from '../../redux/listOfPhotos/listPhotosActions';
+import {Link} from 'react-router-dom';
 
 class Main extends React.Component {
   constructor(props){
@@ -22,7 +23,12 @@ class Main extends React.Component {
               <div className='photo-block'>
                 <img src={item.download_url} alt="Photos"/>
               </div>
-              <h2 className='photo-author'><span>Author:</span>{item.author}</h2>
+              <Link to= {{pathname: `/photo/${item.id}`}}>
+                <h2 className='photo-author'><span>Author: </span>{item.author}</h2>
+              </Link>
+              <div className="item-block-tools">
+                <a href={`${item.url}/download?force=true`} className='btn'>DownLoad</a>
+              </div>
             </div>
           )
         })

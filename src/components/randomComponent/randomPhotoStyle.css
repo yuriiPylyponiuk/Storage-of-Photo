@@ -11,13 +11,19 @@
   margin: 0 10px;
 }
 .btn{
+  border: none;
   padding: 10px 14px;
   font-size: 1.1em;
   cursor: pointer;
   transition: .5s;
   background-color: #ffe2e0;
   border-radius: 10px;
+  color: #000;
+  text-decoration: none;
 }
+.btn:focus{
+  outline: none;
+} 
 .btn:hover{
   background-color: #f8a8a4;
   color: #fff;
